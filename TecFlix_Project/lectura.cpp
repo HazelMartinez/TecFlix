@@ -9,34 +9,7 @@ Lectura::Lectura()
 {
 
 }
-/*
-int main(){
 
-  ifstream ip("data.csv");
-
-  if(!ip.is_open()) std::cout << "ERROR: File Open" << '\n';
-
-  string firstname;
-  string lastname;
-  string age;
-  string weight;
-
-  while(ip.good()){
-
-    getline(ip,firstname,',');
-    getline(ip,lastname,',');
-    getline(ip,age,',');
-    getline(ip,weight,'\n');
-
-    std::cout << "Name: "<<firstname<< " "<<lastname << '\n';
-    std::cout << "Age: "<<age << '\n';
-    std::cout << "Weight: "<<weight << '\n';
-    std::cout << "-------------------" << '\n';
-  }
-
-  ip.close();
-}
-*/
 
 void Lectura::lectura(){
     //ifstream ip("/home/hazel/Escritorio/Datos2_TecFlix/TecFlix/TecFlix_Project/movie_metadata.csv");
@@ -76,15 +49,20 @@ void Lectura::lectura(){
     string imdb_score;
     string aspect_ratio;
     string movie_facebook_likes;
+    string completeLine;
 
 
 
 
+    //while(!archivocsv.eof()){
+    int contador=0;
+    for(int i = 0; !archivocsv.eof(); i++){
+      getline(archivocsv,completeLine);
+      //str_to_
+      contador=i;
 
-    while(!archivocsv.eof()){
-
-      getline(archivocsv,color,',');
-      getline(archivocsv,directorName,',');
+      //cout<<completeLine<<endl;
+      /*getline(archivocsv,directorName,',');
       getline(archivocsv,num_critic_for_reviews,',');
       getline(archivocsv,duration,',');
       getline(archivocsv,director_facebook_likes,',');
@@ -110,9 +88,9 @@ void Lectura::lectura(){
       getline(archivocsv,actor_2_facebook_likes,',');
       getline(archivocsv,imdb_score,',');
       getline(archivocsv,aspect_ratio,',');
-      getline(archivocsv,movie_facebook_likes,',');
+      getline(archivocsv,movie_facebook_likes,',');*/
 
-      std::cout << "Color: "<< color<< '\n';
+      /*std::cout << "Color: "<< color<< '\n';
       std::cout << "Director Name: "<< directorName <<'\n';
       std::cout << "Number Critics for review: "<< num_critic_for_reviews<< '\n';
       std::cout << "Duration: "<< duration<<'\n';
@@ -141,8 +119,10 @@ void Lectura::lectura(){
       std::cout << "Aspect Ratio: "<< aspect_ratio <<'\n';
       std::cout << "movie_facebook_likes: "<<movie_facebook_likes<<'\n';
       std::cout << "-------------------" << '\n';
+      cout<< "El numero de elementos es: " <<i<<endl;*/
 
     }
+    cout << "Cantidad: "<<contador<<'\n';
     /*
     while(!archivocsv.eof()){
         getline(archivocsv, texto);//copiamos el contenido del acrhivo en texto

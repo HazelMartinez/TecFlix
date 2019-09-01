@@ -7,7 +7,15 @@
 #include<fstream>
 using namespace std;
 
-int main(){
+
+int main(int argc, char *argv[]){
+
+    /*
+    QApplication a(argc, argv);
+    MainWindow w;
+    w.show();
+    */
+/*
     Lectura* lecturacsv= new Lectura();
 
     lecturacsv->lectura();
@@ -15,9 +23,18 @@ int main(){
     //lecturacsv->lectura("/home/hazel/Escritorio/Datos2_TecFlix/TecFlix/TecFlix_Project/movie_metadata.csv");
 
 
-    system("pause");
     return 0;
+*/
+
+    //return a.exec();
+
+    cout<< "Termino bien: " <<endl;
+    //std::cout << list[1] << std::endl;
+
+    return 0;
+    system("pause");
 }
+
 
 
 /*

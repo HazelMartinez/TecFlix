@@ -53,11 +53,17 @@ OBJECTS_DIR   = ./
 SOURCES       = ../TecFlix_Project/main.cpp \
 		../TecFlix_Project/mainwindow.cpp \
 		../TecFlix_Project/readcsv.cpp \
-		../TecFlix_Project/lectura.cpp moc_mainwindow.cpp
+		../TecFlix_Project/lectura.cpp \
+		../TecFlix_Project/listnode.cpp \
+		../TecFlix_Project/List.cpp \
+		../TecFlix_Project/linkedlist.cpp moc_mainwindow.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		readcsv.o \
 		lectura.o \
+		listnode.o \
+		List.o \
+		linkedlist.o \
 		moc_mainwindow.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
@@ -135,10 +141,16 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
 		../TecFlix_Project/TecFlix_Project.pro ../TecFlix_Project/mainwindow.h \
 		../TecFlix_Project/readcsv.h \
-		../TecFlix_Project/lectura.h ../TecFlix_Project/main.cpp \
+		../TecFlix_Project/lectura.h \
+		../TecFlix_Project/listnode.h \
+		../TecFlix_Project/List.h \
+		../TecFlix_Project/linkedlist.h ../TecFlix_Project/main.cpp \
 		../TecFlix_Project/mainwindow.cpp \
 		../TecFlix_Project/readcsv.cpp \
-		../TecFlix_Project/lectura.cpp
+		../TecFlix_Project/lectura.cpp \
+		../TecFlix_Project/listnode.cpp \
+		../TecFlix_Project/List.cpp \
+		../TecFlix_Project/linkedlist.cpp
 QMAKE_TARGET  = TecFlix_Project
 DESTDIR       = 
 TARGET        = TecFlix_Project
@@ -322,8 +334,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../TecFlix_Project/mainwindow.h ../TecFlix_Project/readcsv.h ../TecFlix_Project/lectura.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../TecFlix_Project/main.cpp ../TecFlix_Project/mainwindow.cpp ../TecFlix_Project/readcsv.cpp ../TecFlix_Project/lectura.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../TecFlix_Project/mainwindow.h ../TecFlix_Project/readcsv.h ../TecFlix_Project/lectura.h ../TecFlix_Project/listnode.h ../TecFlix_Project/List.h ../TecFlix_Project/linkedlist.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../TecFlix_Project/main.cpp ../TecFlix_Project/mainwindow.cpp ../TecFlix_Project/readcsv.cpp ../TecFlix_Project/lectura.cpp ../TecFlix_Project/listnode.cpp ../TecFlix_Project/List.cpp ../TecFlix_Project/linkedlist.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../TecFlix_Project/mainwindow.ui $(DISTDIR)/
 
 
@@ -396,6 +408,16 @@ readcsv.o: ../TecFlix_Project/readcsv.cpp ../TecFlix_Project/readcsv.h
 
 lectura.o: ../TecFlix_Project/lectura.cpp ../TecFlix_Project/lectura.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o lectura.o ../TecFlix_Project/lectura.cpp
+
+listnode.o: ../TecFlix_Project/listnode.cpp ../TecFlix_Project/listnode.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o listnode.o ../TecFlix_Project/listnode.cpp
+
+List.o: ../TecFlix_Project/List.cpp ../TecFlix_Project/List.h \
+		../TecFlix_Project/listnode.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o List.o ../TecFlix_Project/List.cpp
+
+linkedlist.o: ../TecFlix_Project/linkedlist.cpp ../TecFlix_Project/linkedlist.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o linkedlist.o ../TecFlix_Project/linkedlist.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
