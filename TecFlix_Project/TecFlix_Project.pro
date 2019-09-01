@@ -29,16 +29,14 @@ SOURCES += \
     readcsv.cpp \
     lectura.cpp \
     listnode.cpp \
-    List.cpp \
-    linkedlist.cpp
+    List.cpp
 
 HEADERS += \
         mainwindow.h \
     readcsv.h \
     lectura.h \
     listnode.h \
-    List.h \
-    linkedlist.h
+    List.h
 
 FORMS += \
         mainwindow.ui
