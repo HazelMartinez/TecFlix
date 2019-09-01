@@ -6,6 +6,7 @@ class Lectura
 {
 public:
     Lectura();
+
     void lectura();
 };
 

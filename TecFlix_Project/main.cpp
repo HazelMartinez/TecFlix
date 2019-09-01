@@ -5,8 +5,8 @@
 #include<stdlib.h>
 #include<string.h>
 #include<fstream>
-#include "List.h"
-#include "listnode.h"
+//#include "Linked_List.h"
+#include "lista.h"
 using namespace std;
 
 
@@ -28,13 +28,10 @@ int main(int argc, char *argv[]){
     return 0;
 */
 
-    //return a.exec();
-    cout<< "Inicio bien: " <<endl;
-    List<int> lista;
-    string hola="wewe";
-    //List<string> linkedList; //creates order linked list
-    lista.insertNewNode(8);
-
+   Linked_List<string> *generic_int_linked_list = new Linked_List<string>();
+   generic_int_linked_list->append("Hazel es la mujer mas linda del mundo ");
+   generic_int_linked_list->append("Jason es el mas afortunado en tenerla como amigo");
+   generic_int_linked_list->display();
     cout<< "Termino bien: " <<endl;
     //std::cout << list[1] << std::endl;
 

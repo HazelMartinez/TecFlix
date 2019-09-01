@@ -28,15 +28,17 @@ SOURCES += \
         mainwindow.cpp \
     readcsv.cpp \
     lectura.cpp \
-    listnode.cpp \
-    List.cpp
+    generic_node.cpp \
+    Linked_List.cpp \
+    lista.cpp
 
 HEADERS += \
         mainwindow.h \
     readcsv.h \
     lectura.h \
-    listnode.h \
-    List.h
+    generic_node.h \
+    Linked_List.h \
+    lista.h
 
 FORMS += \
         mainwindow.ui
