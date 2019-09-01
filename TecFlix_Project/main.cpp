@@ -5,6 +5,8 @@
 #include<stdlib.h>
 #include<string.h>
 #include<fstream>
+#include "List.h"
+#include "listnode.h"
 using namespace std;
 
 
@@ -27,6 +29,11 @@ int main(int argc, char *argv[]){
 */
 
     //return a.exec();
+    cout<< "Inicio bien: " <<endl;
+    List<int> lista;
+    string hola="wewe";
+    //List<string> linkedList; //creates order linked list
+    lista.insertNewNode(8);
 
     cout<< "Termino bien: " <<endl;
     //std::cout << list[1] << std::endl;
