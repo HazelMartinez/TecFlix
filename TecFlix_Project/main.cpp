@@ -17,7 +17,7 @@ int main(int argc, char *argv[]){
     MainWindow w;
     w.show();
     */
-/*
+
     Lectura* lecturacsv= new Lectura();
 
     lecturacsv->lectura();
@@ -26,7 +26,10 @@ int main(int argc, char *argv[]){
 
 
     return 0;
-*/
+
+    //string texto = "HOLA SOY Hazel";
+    //cout<< texto.length()<<endl;
+    /*
 
    Linked_List<string> *generic_int_linked_list = new Linked_List<string>();
    generic_int_linked_list->append("Hazel es la mujer mas linda del mundo ");
@@ -37,6 +40,7 @@ int main(int argc, char *argv[]){
 
     return 0;
     system("pause");
+    */
 }
 
 

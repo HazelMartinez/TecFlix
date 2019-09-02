@@ -14,9 +14,9 @@ Lectura::Lectura()
 void Lectura::lectura(){
     //ifstream ip("/home/hazel/Escritorio/Datos2_TecFlix/TecFlix/TecFlix_Project/movie_metadata.csv");
     ifstream archivocsv;
-    string texto; //para dar lectura al archivo, aca se guardaran las palabras
+    //string texto; //para dar lectura al archivo, aca se guardaran las palabras
 
-    archivocsv.open("/home/hazel/Escritorio/Datos2_TecFlix/TecFlix/TecFlix_Project/movie_metadata.csv", ios::in); //abrimos el archivo en modo lectura
+    archivocsv.open("/home/hazel/Escritorio/TecFlix_Proyecto1/TecFlix/TecFlix_Project/movie_metadata.csv", ios::in); //abrimos el archivo en modo lectura
 
     if(archivocsv.fail()){
         cout<<"No se pudo abrir el archivo";
@@ -54,14 +54,32 @@ void Lectura::lectura(){
 
 
 
-    //while(!archivocsv.eof()){
+//    while(!archivocsv.eof()){
     int contador=0;
+
     for(int i = 0; !archivocsv.eof(); i++){
-      getline(archivocsv,completeLine);
-      //str_to_
+        getline(archivocsv, completeLine);
+        string delimiter = ",";
+        size_t pos= 0;
+        string token;
+        if (i == 0){
+        while ((pos = completeLine.find(delimiter)) != string::npos) {
+            //definir un contador
+            //hacer un objeto, si es 0 a color
+            token = completeLine.substr(0, pos);
+            cout << token << std::endl;
+            completeLine.erase(0, pos + delimiter.length());
+        }
+
+        cout << completeLine << endl;
+        }
+
+        //cout<< "NUEVO COMPLETELINE"<< i<<endl;
       contador=i;
 
-      //cout<<completeLine<<endl;
+
+
+//get line de complete line getline(completeline,directorName,)
       /*getline(archivocsv,directorName,',');
       getline(archivocsv,num_critic_for_reviews,',');
       getline(archivocsv,duration,',');
