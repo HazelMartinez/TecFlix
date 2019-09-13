@@ -1,39 +1,40 @@
 #ifndef MOVIE_H
 #define MOVIE_H
-
+#include <iostream>
+//using namespace std;
 
 class movie
 {
 public:
 
-    char directorName;
-    char num_critic_for_reviews;
-    char duration;
-    char director_facebook_likes;
-    char actor_3_facebook_likes;
-    char actor_2_name;
-    char actor_1_facebook_likes;
-    char gross;
-    char genres;
-    char actor_1_name;
-    char movie_title;
-    char num_voted_users;
-    char cast_total_facebook_likes;
-    char actor_3_name;
-    char facenumber_in_poster;
-    char plot_keywords;
-    char movie_imdb_link;
-    char num_user_for_reviews;
-    char language;
-    char country;
-    char content_rating;
-    char budget;
-    char title_year;
-    char actor_2_facebook_likes;
-    char imdb_score;
-    char aspect_ratio;
-    char movie_facebook_likes;
-    char completeLine;
+    std::string directorName;
+    std::string num_critic_for_reviews;
+    std::string duration;
+    std::string director_facebook_likes;
+    std::string actor_3_facebook_likes;
+    std::string actor_2_name;
+    std::string actor_1_facebook_likes;
+    std::string gross;
+    std::string genres;
+    std::string actor_1_name;
+    std::string movie_title;
+    std::string num_voted_users;
+    std::string cast_total_facebook_likes;
+    std::string actor_3_name;
+    std::string facenumber_in_poster;
+    std::string plot_keywords;
+    std::string movie_imdb_link;
+    std::string num_user_for_reviews;
+    std::string language;
+    std::string country;
+    std::string content_rating;
+    std::string budget;
+    std::string title_year;
+    std::string actor_2_facebook_likes;
+    std::string imdb_score;
+    std::string aspect_ratio;
+    std::string movie_facebook_likes;
+    std::string completeLine;
 
 
     void obtener_link_video();
