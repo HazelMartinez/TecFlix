@@ -11,22 +11,26 @@ using namespace std;
 
 
 int main(int argc, char *argv[]){
-
-    /*
+/*
     QApplication a(argc, argv);
     MainWindow w;
     w.show();
-    */
-
+  */
     Lectura* lecturacsv= new Lectura();
 
     lecturacsv->lectura();
 
     //lecturacsv->lectura("/home/hazel/Escritorio/Datos2_TecFlix/TecFlix/TecFlix_Project/movie_metadata.csv");
-
+/*
+    static char *s[] = {"black", "white", "pink", "violet"};
+    char **ptr[] = {s+3, s+2, s+1, s}, ***p;
+    p = ptr;
+    cout<<"p: "<< &p<<
+    ++p;
+    printf("%s", **p+1);
 
     return 0;
-
+*/
     //string texto = "HOLA SOY Hazel";
     //cout<< texto.length()<<endl;
     /*

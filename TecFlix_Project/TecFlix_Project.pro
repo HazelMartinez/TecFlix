@@ -30,7 +30,8 @@ SOURCES += \
     lectura.cpp \
     generic_node.cpp \
     Linked_List.cpp \
-    lista.cpp
+    lista.cpp \
+    movie.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -38,7 +39,8 @@ HEADERS += \
     lectura.h \
     generic_node.h \
     Linked_List.h \
-    lista.h
+    lista.h \
+    movie.h
 
 FORMS += \
         mainwindow.ui
