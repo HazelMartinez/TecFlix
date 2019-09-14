@@ -42,6 +42,7 @@ public:
     void muestra_nombre_autor_clik();
     void muestra_nombre_linkVideo_clik();
     void muestra_nombre_duracion_clik();
+    void imprimir();
     movie();
 
 };

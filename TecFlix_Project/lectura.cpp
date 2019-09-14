@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <fstream>
+#include "Linked_List.h"
+#include "movie.h"
 using namespace std;
 
 Lectura::Lectura()
@@ -22,6 +24,7 @@ void Lectura::lectura(){
         cout<<"No se pudo abrir el archivo";
         exit(1);
     }
+    /*
     string color;
     string directorName;
     string num_critic_for_reviews;
@@ -49,30 +52,66 @@ void Lectura::lectura(){
     string imdb_score;
     string aspect_ratio;
     string movie_facebook_likes;
+
+*/
+
     string completeLine;
-
-
-
 
 //    while(!archivocsv.eof()){
     int contador=0;
+    int indice = 0;
+
+    Linked_List<movie*> *lista_peliculas;
+
 
     for(int i = 0; !archivocsv.eof(); i++){
         getline(archivocsv, completeLine);
         string delimiter = ",";
         size_t pos= 0;
         string token;
-        if (i == 0){
+        string data;
+        movie* pelicula = new movie();//en cada linea se crea pelicula
+
+        if (i == 2){
         while ((pos = completeLine.find(delimiter)) != string::npos) {
+            // npos indicar cuando llegamos
             //definir un contador
             //hacer un objeto, si es 0 a color
             token = completeLine.substr(0, pos);
-            cout << token << std::endl;
+            //cout << token << std::endl;
             completeLine.erase(0, pos + delimiter.length());
+            if(indice == 1){
+                pelicula->directorName = token;
+            }
+            if(indice == 3){
+                pelicula->duration = token;
+            }
+            if(indice == 11){
+                pelicula->movie_title = token;
+            }
+            if(indice == 17){
+                pelicula->movie_imdb_link=token;
+                token= "google-chrome " + token;
+                const char * url = token.c_str();
+                system(url);
+            }
+            indice++;
         }
+        indice = 0;
+        //lista_peliculas->append(*pelicula);
 
-        cout << completeLine << endl;
-        }
+        //pelicula->imprimir();
+
+        //cout << completeLine << endl;
+        } /*else{
+            while ((pos = completeLine.find(delimiter)) != string::npos) {
+
+            data = completeLine.substr(0,pos);
+            cout<<"Esto es data: "<<data<<endl;
+            generic_int_linked_list->append(data);
+            completeLine.erase(0, pos + delimiter.length());
+            }
+         }*/
 
         //cout<< "NUEVO COMPLETELINE"<< i<<endl;
       contador=i;

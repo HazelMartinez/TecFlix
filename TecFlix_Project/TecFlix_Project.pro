@@ -31,7 +31,8 @@ SOURCES += \
     generic_node.cpp \
     Linked_List.cpp \
     lista.cpp \
-    movie.cpp
+    movie.cpp \
+    url.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -40,7 +41,8 @@ HEADERS += \
     generic_node.h \
     Linked_List.h \
     lista.h \
-    movie.h
+    movie.h \
+    url.h
 
 FORMS += \
         mainwindow.ui
