@@ -13,6 +13,7 @@ private:
     LinkedMovie* actual;
     LinkedMovie* previa;
     LinkedMovie* next;
+    LinkedMovie* temp;
 };
 
 #endif // MANEJODEMEMORIA_H

@@ -7,6 +7,7 @@
 #include<fstream>
 //#include "Linked_List.h"
 #include "lista.h"
+#include "manejodememoria.h"
 using namespace std;
 
 
@@ -16,9 +17,14 @@ int main(int argc, char *argv[]){
     MainWindow w;
     w.show();
   */
-    Lectura* lecturacsv= new Lectura();
+    ManejoDeMemoria* manejo =  new ManejoDeMemoria();
+    manejo->CargarPagina(2,4);
 
-    lecturacsv->lectura();
+
+    //Lectura* lecturacsv= new Lectura();
+
+    //lecturacsv->lectura();
+
 
     //lecturacsv->lectura("/home/hazel/Escritorio/Datos2_TecFlix/TecFlix/TecFlix_Project/movie_metadata.csv");
 /*
@@ -36,8 +42,8 @@ int main(int argc, char *argv[]){
     /*
 
    Linked_List<string> *generic_int_linked_list = new Linked_List<string>();
-   generic_int_linked_list->append("Hazel es la mujer mas linda del mundo ");
-   generic_int_linked_list->append("Jason es el mas afortunado en tenerla como amigo");
+   generic_int_linked_list->append("Hazel ");
+   generic_int_linked_list->append(" Martinez");
    generic_int_linked_list->display();
     cout<< "Termino bien: " <<endl;
     //std::cout << list[1] << std::endl;
