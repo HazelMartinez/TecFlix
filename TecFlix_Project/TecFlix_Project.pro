@@ -32,7 +32,10 @@ SOURCES += \
     Linked_List.cpp \
     lista.cpp \
     movie.cpp \
-    url.cpp
+    url.cpp \
+    nodemovie.cpp \
+    linkedmovie.cpp \
+    manejodememoria.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -42,7 +45,10 @@ HEADERS += \
     Linked_List.h \
     lista.h \
     movie.h \
-    url.h
+    url.h \
+    nodemovie.h \
+    linkedmovie.h \
+    manejodememoria.h
 
 FORMS += \
         mainwindow.ui
