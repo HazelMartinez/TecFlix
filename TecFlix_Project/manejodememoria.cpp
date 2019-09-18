@@ -11,7 +11,7 @@ ManejoDeMemoria::ManejoDeMemoria()
 {
 
 }
-LinkedMovie* ManejoDeMemoria::CargarPagina(int menor, int mayor){
+LinkedMovie* ManejoDeMemoria::CargarPagina(){
     ifstream archivocsv;
     //string texto; //para dar lectura al archivo, aca se guardaran las palabras
 
@@ -35,7 +35,7 @@ LinkedMovie* ManejoDeMemoria::CargarPagina(int menor, int mayor){
         string data;
         movie *pelicula= new movie();//en cada linea se crea pelicula
 
-        if (i <= menor || i <mayor ){
+        if (i >= this->menor && i <this->mayor ){
         while ((pos = completeLine.find(delimiter)) != string::npos) {
             // npos indicar cuando llegamos
             //definir un contador
@@ -67,18 +67,53 @@ LinkedMovie* ManejoDeMemoria::CargarPagina(int menor, int mayor){
       contador=i;
 
     }
-    lista_peliculas->display();
-    cout << "Cantidad: "<<contador<<'\n';
+    //lista_peliculas->display();
+    //cout << "Cantidad: "<<contador<<'\n';
  archivocsv.close();//se cierra el archivo
-
+    return lista_peliculas;
 
 }
 
 void ManejoDeMemoria::CargarAtras(){
-
+    this->temp = this->actual;
+    this->actual = this->previa;
+    this->next = this->actual;
+    this->previa = CargarPagina();
 }
 void ManejoDeMemoria::CargarAdelante(){
-    this->next = this->actual;
+    this->temp = this->actual;
     this->actual = this->next;
-    this->previa= this->next;
+    this->previa = this->temp;
+    this->next = CargarPagina();
 }
+void ManejoDeMemoria::setmayor(int mayor){
+    this->mayor=mayor;
+}
+void ManejoDeMemoria::setmenor(int menor){
+    this->menor=menor;
+}
+void ManejoDeMemoria::CargarInicial(int cantidadPeliculas){
+    this->actual=CargarPagina();
+    this->menor=this->mayor;
+    this->mayor=this->mayor+cantidadPeliculas;
+    this->next=CargarPagina();
+    this->previa=NULL;
+    //this->actual->display();
+
+}
+LinkedMovie* ManejoDeMemoria::getActual(){
+    return this->actual;
+}
+LinkedMovie* ManejoDeMemoria::getNext(){
+    return this->next;
+}
+LinkedMovie* ManejoDeMemoria::getPrevia(){
+    return this->previa;
+}
+int ManejoDeMemoria::getmayor(){
+    return this->mayor;
+}
+int ManejoDeMemoria::getmenor(){
+    return this->menor;
+}
+

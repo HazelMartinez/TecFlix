@@ -48,7 +48,8 @@ HEADERS += \
     url.h \
     nodemovie.h \
     linkedmovie.h \
-    manejodememoria.h
+    manejodememoria.h \
+    ventanaatras.h
 
 FORMS += \
         mainwindow.ui

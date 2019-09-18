@@ -72,8 +72,8 @@ void Lectura::lectura(){
       contador=i;
 
     }
-    lista_peliculas->display();
-    cout << "Cantidad: "<<contador<<'\n';
+    //lista_peliculas->display();
+    //cout << "Cantidad: "<<contador<<'\n';
  archivocsv.close();//se cierra el archivo
 
 }

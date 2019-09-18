@@ -10,17 +10,17 @@
 #include "manejodememoria.h"
 using namespace std;
 
-
-int main(int argc, char *argv[]){
 /*
+int main(int argc, char *argv[]){
+
     QApplication a(argc, argv);
     MainWindow w;
     w.show();
-  */
+
     ManejoDeMemoria* manejo =  new ManejoDeMemoria();
-    manejo->CargarPagina(2,4);
 
 
+*/
     //Lectura* lecturacsv= new Lectura();
 
     //lecturacsv->lectura();
@@ -51,11 +51,11 @@ int main(int argc, char *argv[]){
     return 0;
     system("pause");
     */
-}
+//}
 
 
 
-/*
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -65,4 +65,4 @@ int main(int argc, char *argv[])
     lectura->lectura();
     return a.exec();
 }
-*/
+

@@ -6,14 +6,25 @@ class ManejoDeMemoria
 {
 public:
     ManejoDeMemoria();
-    LinkedMovie* CargarPagina(int menor, int mayor);
+    LinkedMovie* CargarPagina();
     void CargarAtras();
     void CargarAdelante();
+    void setmayor(int mayor);
+    void setmenor (int menor);
+    int getmayor();
+    int getmenor();
+    void CargarInicial(int cantidadPeliculas);
+    LinkedMovie* getActual();
+    LinkedMovie* getPrevia();
+    LinkedMovie* getNext();
+
 private:
     LinkedMovie* actual;
     LinkedMovie* previa;
     LinkedMovie* next;
     LinkedMovie* temp;
+    int menor;
+    int mayor;
 };
 
 #endif // MANEJODEMEMORIA_H
