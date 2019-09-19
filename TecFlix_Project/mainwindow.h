@@ -3,6 +3,9 @@
 
 #include <QMainWindow>
 #include "manejodememoria.h"
+#include "linkedmovie.h"
+#include <iostream>
+using namespace std;
 namespace Ui {
 class MainWindow;
 }
@@ -26,9 +29,11 @@ private slots:
 
     void on_upButton_clicked();
 
+
+
 private:
     int contInferior=1;
-    int contSuperior=10;
+    int contSuperior=cantidadPeliculas+contInferior;
     Ui::MainWindow *ui;
     QWidget *ventanaP;
 };

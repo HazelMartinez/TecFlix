@@ -58,11 +58,11 @@ int main(int argc, char *argv[]){
 
 int main(int argc, char *argv[])
 {
+    Lectura* lectura = new Lectura;
+    lectura->lectura();
     QApplication a(argc, argv);
     MainWindow w;
     w.show();
-    Lectura* lectura = new Lectura;
-    lectura->lectura();
     return a.exec();
 }
 

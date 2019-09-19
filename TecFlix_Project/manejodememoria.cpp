@@ -116,4 +116,40 @@ int ManejoDeMemoria::getmayor(){
 int ManejoDeMemoria::getmenor(){
     return this->menor;
 }
+LinkedMovie* ManejoDeMemoria::mostrar_datos(LinkedMovie* controlador_actual){
+    //cout<<controlador_actual->length<<endl;
+    //LinkedMovie* lista_pelicula_individual = new LinkedMovie();//lista de las peliculas individuales
+    movie * pelicula_individual = new movie(); //los datos de la pelicula
+    int contador = 0; //contador para obtener para una pelicula
+    int indice_prueba = 0; //prueba para solo obtener para 1 pelicula
+    string director_name;
+    string duracion;
+    string link;
+    string nombre;
+    string total;
+    if( controlador_actual->length <= 9 ){ //si no se ha terminado de recorrer toda la lista
+        if(indice_prueba <=1){
+            for(int i = 0;i <= 3; i++){ //son 4 datos de la pelicula
+                cout<<"Ciclo de obtener datos individuales de la pelicula"<<endl;
+                if(i==0){ //si esta en la director name
+                    //pelicula_individual->directorName = controlador_actual;
+                    pelicula_individual = controlador_actual->GetNth(0)->value;
+                    total = pelicula_individual->movie_title;
+                    cout<<total<<endl;
+                }
+                if(i==1){
+                    //pelicula_individual= controlador_actual->GetNth(1);
+                }
+                if(i==2){
+                    //pelicula_individual= controlador_actual->GetNth(2);
+                }
+                if(i==3){
+                    //pelicula_individual= controlador_actual->GetNth(3);
+                }
+                //lista_pelicula_individual->append(pelicula_individual);
+            }
 
+            contador = 0;
+        }
+    }
+}

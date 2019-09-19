@@ -19,6 +19,7 @@ void LinkedMovie::append(movie* value) {
         tail = new_node;
         new_node = NULL;
     }
+    this->length++;
 }
 
 void LinkedMovie::display () {
@@ -35,4 +36,34 @@ void LinkedMovie::display () {
         display_node=display_node->next;
     }
 }
+
+nodemovie* LinkedMovie::GetNth(int n)
+{
+    int contador = 0;
+    nodemovie *display_node=new nodemovie();
+    display_node=head;
+
+    while(contador < n) {
+
+        display_node=display_node->next;
+        contador++;
+    }
+    return display_node;
+}
+
+/*
+movie* LinkedMovie::get(int index) {
+    if(index == 0) {
+        // Get the first element
+        return head;
+    } else {
+        // Get the index'th element
+        nodemovie* curr = head;
+        for(int i = 0; i < index; ++i) {
+            curr = head->value;
+        }
+        return head->value;
+    }
+}
+*/
 

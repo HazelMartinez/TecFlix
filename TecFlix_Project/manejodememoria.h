@@ -7,6 +7,7 @@ class ManejoDeMemoria
 public:
     ManejoDeMemoria();
     LinkedMovie* CargarPagina();
+    LinkedMovie* mostrar_datos(LinkedMovie* controlador_actual);
     void CargarAtras();
     void CargarAdelante();
     void setmayor(int mayor);

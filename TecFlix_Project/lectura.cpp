@@ -78,4 +78,11 @@ void Lectura::lectura(){
 
 }
 
+/*
+LinkedMovie* Lectura::MostrarDatos(LinkedMovie* manager_actual){
+
+
+}
+*/
+
 
