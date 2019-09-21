@@ -83,19 +83,22 @@ void MainWindow::handleButton(){
 */
 
 void MainWindow::createButtons(){
-    int x = 0;
-    int y = 0;
+    int x = 8;
+    int y = 10;
+    int buttonwidth=50;
+    int buttonheight=100;
 
-
-    for(int i = 0; i<=18 ;i++){
-        for(int j = 0; j<=7;j++){
+    for(int i = 0; i<6 ;i++){
+        for(int j = 0; j<17;j++){
             QPushButton *a = new QPushButton(ui->centralWidget);
-            a->resize(50,50);
-            a->setGeometry(x+55, y+107,50,50);
+                a->setGeometry(x, y,buttonwidth,buttonheight);
             //a->setGeometry(i*100, j*50, 50, 50);
             //a->setGeometry();
+            x=x+55;
             a->show();
         }
+        x=8;
+        y=y+107;
         //x reset
         //ui->gridMovies->addWidget(a);
     }
