@@ -116,7 +116,7 @@ int ManejoDeMemoria::getmayor(){
 int ManejoDeMemoria::getmenor(){
     return this->menor;
 }
-LinkedMovie* ManejoDeMemoria::mostrar_datos(LinkedMovie* controlador_actual){
+string ManejoDeMemoria::mostrar_datos(LinkedMovie* controlador_actual){
     //cout<<controlador_actual->length<<endl;
     //LinkedMovie* lista_pelicula_individual = new LinkedMovie();//lista de las peliculas individuales
     movie * pelicula_individual = new movie(); //los datos de la pelicula
@@ -135,7 +135,8 @@ LinkedMovie* ManejoDeMemoria::mostrar_datos(LinkedMovie* controlador_actual){
                     //pelicula_individual->directorName = controlador_actual;
                     pelicula_individual = controlador_actual->GetNth(0)->value;
                     total = pelicula_individual->movie_title;
-                    cout<<total<<endl;
+                    //cout<<total<<endl;
+                    return total;
                 }
                 if(i==1){
                     //pelicula_individual= controlador_actual->GetNth(1);

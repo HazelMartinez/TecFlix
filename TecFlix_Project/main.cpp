@@ -54,8 +54,6 @@ int main(int argc, char *argv[]){
 //}
 
 
-
-
 int main(int argc, char *argv[])
 {
     Lectura* lectura = new Lectura;

@@ -1,13 +1,13 @@
 #ifndef MANEJODEMEMORIA_H
 #define MANEJODEMEMORIA_H
 #include "linkedmovie.h"
-
+using namespace std;
 class ManejoDeMemoria
 {
 public:
     ManejoDeMemoria();
     LinkedMovie* CargarPagina();
-    LinkedMovie* mostrar_datos(LinkedMovie* controlador_actual);
+    string mostrar_datos(LinkedMovie* controlador_actual);
     void CargarAtras();
     void CargarAdelante();
     void setmayor(int mayor);

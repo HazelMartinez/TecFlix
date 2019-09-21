@@ -2,12 +2,36 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "manejodememoria.h"
+#include "QFrame"
+#include "QLabel"
+#include "QPushButton"
+#include <QCoreApplication>
+#include <QTableWidget>
+#include <QWidget>
+#include <QMainWindow>
+#include <QVBoxLayout>
+#include <QPushButton>
+#include <QLabel>
+#include <QLineEdit>
+#include <QGroupBox>
+
+#include <QTextEdit>
+
 using namespace std;
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-
+    /*
+    //Create the button
+    m_pButton = new QPushButton("My Button", this);
+    //set size and location of the button
+    m_pButton->setGeometry(QRect( QPoint(100, 100),
+    QSize(200, 50) ));
+    //Connect button signal to appropriate slot
+    connect(m_pButton, SIGNAL (released()),this, SLOT (handleButton()));
+    */
     ui->setupUi(this);
     // seteo los valores iniciales
     manager->setmayor(this->contSuperior); //establece el indice inferior
@@ -17,6 +41,8 @@ MainWindow::MainWindow(QWidget *parent) :
     //std::cout<<"*************************************************************"<<"\n";
     //manager->getNext()->display();
     //Aqui iria  la llamada al metodo de poner los datos en pantalla, el cual recibe una linkemovie que es manager.getActual
+
+    createButtons();
     manager->mostrar_datos(manager->getActual());
 }
 
@@ -25,10 +51,6 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_movie1_pressed()
-{
-    cout<<"Press button 1"<<endl;
-}
 
 void MainWindow::on_downButton_clicked()
 {
@@ -51,4 +73,53 @@ void MainWindow::on_upButton_clicked()
     }
 }
 
+/*
+void MainWindow::handleButton(){
+    //change the text
+    m_pButton->setText("Example");
+    //resize button
+    m_pButton->resize(100,100);
+}
+*/
 
+void MainWindow::createButtons(){
+    int x = 0;
+    int y = 0;
+
+
+    for(int i = 0; i<=18 ;i++){
+        for(int j = 0; j<=7;j++){
+            QPushButton *a = new QPushButton(ui->centralWidget);
+            a->resize(50,50);
+            a->setGeometry(x+55, y+107,50,50);
+            //a->setGeometry(i*100, j*50, 50, 50);
+            //a->setGeometry();
+            a->show();
+        }
+        //x reset
+        //ui->gridMovies->addWidget(a);
+    }
+}
+
+
+
+void MainWindow::setButtons()
+{
+    /*
+    const QSize btnSize = QSize(50, 50);
+    for(int i = 0; i < 10; i++) {
+        QPushButton *btn = new QPushButton(ui->centralWidget);
+        btn->setText(QString::number(i));
+        btn->resize(btnSize);
+    }
+
+    QGridLayout *btnLayout = new QGridLayout(ui->centralWidget);
+    for(int i = 0; i < 4; i++) {
+        for(int j = 0; j < 4; j++) {
+            btnLayout->addWidget(btn,i*100,j*50,80,40);
+            btnLayout->setSpacing(0);
+        }
+    }
+    centralWidget->setLayout(btnLayout);
+    */
+}
