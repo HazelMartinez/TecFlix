@@ -78,6 +78,9 @@ void MainWindow::prueba(int a){
 }
 void MainWindow::Linkear(string url){
     std::cout<<"bien"<<"\n";
+    url= "google-chrome " + url;
+    const char * link = url.c_str();
+    system(link);
 }
 void MainWindow::createButtons(){
     int x = 8;
@@ -86,7 +89,7 @@ void MainWindow::createButtons(){
     int buttonheight=200;
     int tamanioListaPeli = manager->getActual()->length; //manager tiene las listas
     int contador = 0;
-    string url1="asdf";
+    string url1="asdf",nombre;
     for(int i = 0; i<3 ;i++){
         for(int j = 0; j<8;j++){
             QPushButton *a = new QPushButton(ui->centralWidget);
@@ -94,11 +97,13 @@ void MainWindow::createButtons(){
             x=x+buttonwidth + 5;
 
             if(tamanioListaPeli > contador){
-                a->setText("Pelicula");
+                nombre=(manager->getActual()->GetNth(contador)->value->movie_title);
+                //nombre=nombre.replace(nombre.begin(),nombre.end(),' ','\n');
+                a->setText(nombre.c_str());
                 //connect ( a, SIGNAL( buttonClicked(string)), this, SLOT(Linkear(url1) ));
                 contador++;
                 connect(a, &QPushButton::clicked, [this]() {
-                      Linkear("hola");
+                      Linkear("www.imdb.com/title/tt0401729/?ref_=fn_tt_tt_1");
                   });
             }
 /*QPushButton * button1 = ...;

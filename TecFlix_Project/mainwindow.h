@@ -19,7 +19,7 @@ public:
     explicit MainWindow(QWidget *parent = 0);    
     ~MainWindow();
     ManejoDeMemoria *manager=new ManejoDeMemoria();
-    int cantidadPeliculas =15; //el tamanio de pagina es fijo, pero se puede cambiar antes de la ejecucion
+    int cantidadPeliculas =24; //el tamanio de pagina es fijo, pero se puede cambiar antes de la ejecucion
     void Linkear(string url);
 private slots:
     //int contInferior=0;

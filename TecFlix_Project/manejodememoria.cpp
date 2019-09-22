@@ -136,7 +136,7 @@ string ManejoDeMemoria::mostrar_datos(LinkedMovie* controlador_actual){
                     //pelicula_individual->directorName = controlador_actual;
                     pelicula_individual = controlador_actual->GetNth(0)->value;
                     total = pelicula_individual->movie_title;
-                    //cout<<total<<endl;
+                    cout<<total<<endl;
                     return total;
                 }
                 if(i==1){
