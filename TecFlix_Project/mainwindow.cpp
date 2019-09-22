@@ -48,21 +48,27 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_downButton_clicked()
 {
-    if ((manager->getmayor()+cantidadPeliculas)<5044){ // verifica si no es el final
+
+    manager->getActual()->display();
+    std::cout<<"*****************Prueba en down Button********************"<<"\n";
+    //if ((manager->getmayor()+cantidadPeliculas)<5044){ // verifica si no es el final
     manager->setmenor(manager->getmayor()); // setea los nuevos valores de los indices el menor ahora es el mayor
     manager->setmayor(manager->getmayor()+cantidadPeliculas); // el mayor es lo que tenia el mayor + la cantidad de peliculas a mostrar
     manager->CargarAdelante(); // carga las de adelante
+    //manager->getActual()->display();
     createButtons();
     std::cout<<"Entrando a cargar adelante*****************************"<<"\n";
-    }
+    //}
 }
 
 void MainWindow::on_upButton_clicked()
 {
-    if ((manager->getmenor()-cantidadPeliculas-1)>0){// verifica si no es es el inicio
+    //std::cout<<manager->getmenor()<<"\n";
+    if ((manager->getmenor())>1){// verifica si no es es el inicio
         manager->setmayor(manager->getmenor());// el mayor ahora es el menor
     manager->setmenor(manager->getmenor()-cantidadPeliculas); // el menor es el menor - la cantidad de peliculas a mostrar
     manager->CargarAtras();// carga atras
+
     createButtons();
     }
 }
@@ -83,6 +89,45 @@ void MainWindow::Linkear(string url){
     url= "google-chrome " + url;
     const char * link = url.c_str();
     system(link);
+}
+
+void MainWindow::ventana_datos(int nodo){
+    QLabel* l = new QLabel;
+    string nombre;
+    int verificador = 0;
+    wdg->setGeometry(100,0,800,500);
+    wdg->setStyleSheet("background-color:: #738FA7");
+    QPalette Pal(palette());
+    // Asignar el color de fondo como Negro
+    //Pal.setColor(QPalette::Background, Qt::black);
+    //QColor color(115,143,167);
+    QColor color(12,65,96);
+    Pal.setColor (QPalette::Background, color);
+    wdg->setAutoFillBackground(true);
+    wdg->setPalette(Pal);
+    //if(wdg->isVisible()){
+    if(verificador==0){
+        nombre=(manager->getActual()->GetNth(nodo)->value->movie_title);
+        l->setText(nombre.c_str());
+        l->setParent(wdg);
+        l->setGeometry(0,0,400,100);
+        verificador++;
+
+        //wdg->setAttribute(Qt::WA_DeleteOnClose);
+
+    }
+    else{
+        nombre=(manager->getActual()->GetNth(nodo)->value->movie_title);
+        l->clear();
+        l->setText(nombre.c_str());
+        l->setParent(wdg);
+        l->setGeometry(0,0,400,100);
+        verificador++;
+    }
+
+
+    wdg->show();
+
 }
 void MainWindow::createButtons(){
     int x = 8;
@@ -106,10 +151,22 @@ void MainWindow::createButtons(){
                 nombre=Cambiar(nombre);
                 a->setText(nombre.c_str());
                 connect(a, &QPushButton::clicked, [=]() { //paso por valor =
+                    //QPushButton emite una señal si un evento ocurre. Para manejar el botón conecte la señal apropiada a el slot:
                       Linkear(movie_link);
+                      ventana_datos(contador);
+
+
                     //Linkear(MainWindow);
 
                   });
+                /*
+
+                connect(a, &QPushButton::clicked, [=](){
+                    ventana_datos();
+
+                });
+
+*/
                  contador++;
             }
 

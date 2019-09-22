@@ -6,6 +6,7 @@
 #include "linkedmovie.h"
 #include <iostream>
 #include <QPushButton>
+
 using namespace std;
 namespace Ui {
 class MainWindow;
@@ -34,6 +35,8 @@ private slots:
 
     void createButtons();
 
+    void ventana_datos(int contador);
+
 
 
 
@@ -46,6 +49,9 @@ private:
     QWidget *ventanaP;
     QPushButton * m_pButton;
     QTabWidget* m_pTableWidget;
+    QWidget *wdg = new QWidget;
+
+
 };
 
 

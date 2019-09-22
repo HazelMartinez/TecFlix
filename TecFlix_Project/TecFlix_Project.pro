@@ -35,8 +35,7 @@ SOURCES += \
     url.cpp \
     nodemovie.cpp \
     linkedmovie.cpp \
-    manejodememoria.cpp \
-    mainwindow_atras.cpp
+    manejodememoria.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -50,9 +49,7 @@ HEADERS += \
     nodemovie.h \
     linkedmovie.h \
     manejodememoria.h \
-    ventanaatras.h \
-    mainwindow_atras.h
+    ventanaatras.h
 
 FORMS += \
-        mainwindow.ui \
-    mainwindow_atras.ui
+        mainwindow.ui

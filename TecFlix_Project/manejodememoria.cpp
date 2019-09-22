@@ -94,10 +94,13 @@ void ManejoDeMemoria::setmenor(int menor){
     this->menor=menor;
 }
 void ManejoDeMemoria::CargarInicial(int cantidadPeliculas){
+    int menor1=this->menor,mayor1=this->mayor;
     this->actual=CargarPagina();
     this->menor=this->mayor;
     this->mayor=this->mayor+cantidadPeliculas;
     this->next=CargarPagina();
+    this->mayor=mayor1;
+    this->menor=menor1;
     this->previa=NULL;
     //this->actual->display();
 
