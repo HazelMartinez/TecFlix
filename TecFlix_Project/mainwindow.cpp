@@ -14,6 +14,8 @@
 #include <QLabel>
 #include <QLineEdit>
 #include <QGroupBox>
+#include "mainwindow_atras.h"
+#include <QtGui>
 
 #include <QTextEdit>
 
@@ -35,7 +37,7 @@ MainWindow::MainWindow(QWidget *parent) :
     //Aqui iria  la llamada al metodo de poner los datos en pantalla, el cual recibe una linkemovie que es manager.getActual
 
     createButtons();
-    manager->mostrar_datos(manager->getActual());
+    //manager->mostrar_datos(manager->getActual());
 }
 
 MainWindow::~MainWindow()
@@ -50,18 +52,18 @@ void MainWindow::on_downButton_clicked()
     manager->setmenor(manager->getmayor()); // setea los nuevos valores de los indices el menor ahora es el mayor
     manager->setmayor(manager->getmayor()+cantidadPeliculas); // el mayor es lo que tenia el mayor + la cantidad de peliculas a mostrar
     manager->CargarAdelante(); // carga las de adelante
-    //llamar a manager.dislay ahora probar
+    createButtons();
     std::cout<<"Entrando a cargar adelante*****************************"<<"\n";
     }
 }
 
 void MainWindow::on_upButton_clicked()
 {
-    if ((manager->getmenor()-cantidadPeliculas)>0){// verifica si no es es el inicio
+    if ((manager->getmenor()-cantidadPeliculas-1)>0){// verifica si no es es el inicio
         manager->setmayor(manager->getmenor());// el mayor ahora es el menor
     manager->setmenor(manager->getmenor()-cantidadPeliculas); // el menor es el menor - la cantidad de peliculas a mostrar
     manager->CargarAtras();// carga atras
-    std::cout<<"Entrando a cargar atras*****************************"<<"\n";
+    createButtons();
     }
 }
 
@@ -103,7 +105,6 @@ void MainWindow::createButtons(){
                 string movie_link = (manager->getActual()->GetNth(contador)->value->movie_imdb_link).c_str();
                 nombre=Cambiar(nombre);
                 a->setText(nombre.c_str());
-                cout<<this->video<<endl;
                 connect(a, &QPushButton::clicked, [=]() { //paso por valor =
                       Linkear(movie_link);
                     //Linkear(MainWindow);
@@ -111,18 +112,7 @@ void MainWindow::createButtons(){
                   });
                  contador++;
             }
-/*QPushButton * button1 = ...;
-QPushButton * button2 = ...;
 
-QSignalMapper mapper;
-
-connect(button1, SIGNAL(released()), &mapper, SLOT(map()));
-mapper.setMapping(button1, 42); // Number to be passed in the slot
-
-connect(button2, SIGNAL(released()), &mapper, SLOT(map()));
-mapper.setMapping(button2, 1337); // Number to be passed in the slot
-
-connect(&mapper, SIGNAL(mapped(int)), this, SLOT(handleButton(int)));*/
             a->show();
         }
         x=8;

@@ -78,7 +78,7 @@ LinkedMovie* ManejoDeMemoria::CargarPagina(){
 void ManejoDeMemoria::CargarAtras(){
     this->temp = this->actual;
     this->actual = this->previa;
-    this->next = this->actual;
+    this->next = this->temp;
     this->previa = CargarPagina();
 }
 void ManejoDeMemoria::CargarAdelante(){
