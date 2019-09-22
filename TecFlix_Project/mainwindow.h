@@ -21,6 +21,7 @@ public:
     ManejoDeMemoria *manager=new ManejoDeMemoria();
     int cantidadPeliculas =24; //el tamanio de pagina es fijo, pero se puede cambiar antes de la ejecucion
     void Linkear(string url);
+    string Cambiar(string cadena);
 private slots:
     //int contInferior=0;
     //int contSuperior=9;

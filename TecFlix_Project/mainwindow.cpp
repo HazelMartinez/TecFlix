@@ -89,7 +89,9 @@ void MainWindow::createButtons(){
     int buttonheight=200;
     int tamanioListaPeli = manager->getActual()->length; //manager tiene las listas
     int contador = 0;
-    string url1="asdf",nombre;
+    string url1="\n sdf",nombre;
+
+
     for(int i = 0; i<3 ;i++){
         for(int j = 0; j<8;j++){
             QPushButton *a = new QPushButton(ui->centralWidget);
@@ -98,13 +100,16 @@ void MainWindow::createButtons(){
 
             if(tamanioListaPeli > contador){
                 nombre=(manager->getActual()->GetNth(contador)->value->movie_title);
-                //nombre=nombre.replace(nombre.begin(),nombre.end(),' ','\n');
+                string movie_link = (manager->getActual()->GetNth(contador)->value->movie_imdb_link).c_str();
+                nombre=Cambiar(nombre);
                 a->setText(nombre.c_str());
-                //connect ( a, SIGNAL( buttonClicked(string)), this, SLOT(Linkear(url1) ));
-                contador++;
-                connect(a, &QPushButton::clicked, [this]() {
-                      Linkear("www.imdb.com/title/tt0401729/?ref_=fn_tt_tt_1");
+                cout<<this->video<<endl;
+                connect(a, &QPushButton::clicked, [=]() { //paso por valor =
+                      Linkear(movie_link);
+                    //Linkear(MainWindow);
+
                   });
+                 contador++;
             }
 /*QPushButton * button1 = ...;
 QPushButton * button2 = ...;
@@ -125,6 +130,18 @@ connect(&mapper, SIGNAL(mapped(int)), this, SLOT(handleButton(int)));*/
         //x reset
         //ui->gridMovies->addWidget(a);
     }
+}
+string MainWindow::Cambiar(string cadena){
+    std::string x = " ", y = "\n";
+
+    size_t pos;
+    while ((pos = cadena.find(x)) != std::string::npos) {
+        cadena.replace(pos, 1, y);
+    }
+
+
+
+    return cadena;
 }
 
 
