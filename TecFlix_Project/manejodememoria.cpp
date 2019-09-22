@@ -37,6 +37,7 @@ LinkedMovie* ManejoDeMemoria::CargarPagina(){
 
         if (i >= this->menor && i <this->mayor ){
         while ((pos = completeLine.find(delimiter)) != string::npos) {
+            //va separando por el limitador
             // npos indicar cuando llegamos
             //definir un contador
             //hacer un objeto, si es 0 a color

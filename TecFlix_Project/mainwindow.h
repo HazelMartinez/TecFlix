@@ -19,12 +19,12 @@ public:
     explicit MainWindow(QWidget *parent = 0);    
     ~MainWindow();
     ManejoDeMemoria *manager=new ManejoDeMemoria();
-    int cantidadPeliculas =9;
-
+    int cantidadPeliculas =15; //el tamanio de pagina es fijo, pero se puede cambiar antes de la ejecucion
+    void Linkear(string url);
 private slots:
     //int contInferior=0;
     //int contSuperior=9;
-
+    void prueba(int a);
     void on_downButton_clicked();
 
     void on_upButton_clicked();
@@ -33,7 +33,6 @@ private slots:
 
     void createButtons();
 
-    void setButtons();
 
 
 
@@ -41,6 +40,7 @@ private slots:
 private:
     int contInferior=1;
     int contSuperior=cantidadPeliculas+contInferior;
+    string video;
     Ui::MainWindow *ui;
     QWidget *ventanaP;
     QPushButton * m_pButton;

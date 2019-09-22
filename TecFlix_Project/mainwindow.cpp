@@ -23,15 +23,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-    /*
-    //Create the button
-    m_pButton = new QPushButton("My Button", this);
-    //set size and location of the button
-    m_pButton->setGeometry(QRect( QPoint(100, 100),
-    QSize(200, 50) ));
-    //Connect button signal to appropriate slot
-    connect(m_pButton, SIGNAL (released()),this, SLOT (handleButton()));
-    */
+
     ui->setupUi(this);
     // seteo los valores iniciales
     manager->setmayor(this->contSuperior); //establece el indice inferior
@@ -81,24 +73,50 @@ void MainWindow::handleButton(){
     m_pButton->resize(100,100);
 }
 */
-
+void MainWindow::prueba(int a){
+    std::cout<<"mal"<<"\n";
+}
+void MainWindow::Linkear(string url){
+    std::cout<<"bien"<<"\n";
+}
 void MainWindow::createButtons(){
     int x = 8;
     int y = 10;
-    int buttonwidth=50;
-    int buttonheight=100;
-
-    for(int i = 0; i<6 ;i++){
-        for(int j = 0; j<17;j++){
+    int buttonwidth=115;
+    int buttonheight=200;
+    int tamanioListaPeli = manager->getActual()->length; //manager tiene las listas
+    int contador = 0;
+    string url1="asdf";
+    for(int i = 0; i<3 ;i++){
+        for(int j = 0; j<8;j++){
             QPushButton *a = new QPushButton(ui->centralWidget);
-                a->setGeometry(x, y,buttonwidth,buttonheight);
-            //a->setGeometry(i*100, j*50, 50, 50);
-            //a->setGeometry();
-            x=x+55;
+            a->setGeometry(x, y,buttonwidth,buttonheight);
+            x=x+buttonwidth + 5;
+
+            if(tamanioListaPeli > contador){
+                a->setText("Pelicula");
+                //connect ( a, SIGNAL( buttonClicked(string)), this, SLOT(Linkear(url1) ));
+                contador++;
+                connect(a, &QPushButton::clicked, [this]() {
+                      Linkear("hola");
+                  });
+            }
+/*QPushButton * button1 = ...;
+QPushButton * button2 = ...;
+
+QSignalMapper mapper;
+
+connect(button1, SIGNAL(released()), &mapper, SLOT(map()));
+mapper.setMapping(button1, 42); // Number to be passed in the slot
+
+connect(button2, SIGNAL(released()), &mapper, SLOT(map()));
+mapper.setMapping(button2, 1337); // Number to be passed in the slot
+
+connect(&mapper, SIGNAL(mapped(int)), this, SLOT(handleButton(int)));*/
             a->show();
         }
         x=8;
-        y=y+107;
+        y=y+buttonheight + 7;
         //x reset
         //ui->gridMovies->addWidget(a);
     }
@@ -106,23 +124,4 @@ void MainWindow::createButtons(){
 
 
 
-void MainWindow::setButtons()
-{
-    /*
-    const QSize btnSize = QSize(50, 50);
-    for(int i = 0; i < 10; i++) {
-        QPushButton *btn = new QPushButton(ui->centralWidget);
-        btn->setText(QString::number(i));
-        btn->resize(btnSize);
-    }
 
-    QGridLayout *btnLayout = new QGridLayout(ui->centralWidget);
-    for(int i = 0; i < 4; i++) {
-        for(int j = 0; j < 4; j++) {
-            btnLayout->addWidget(btn,i*100,j*50,80,40);
-            btnLayout->setSpacing(0);
-        }
-    }
-    centralWidget->setLayout(btnLayout);
-    */
-}
