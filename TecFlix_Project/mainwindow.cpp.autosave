@@ -112,37 +112,6 @@ void MainWindow::ventana_datos(int nodo){
     l->setText(nombre.c_str());
     l->setParent(wdg);
     l->setGeometry(0,0,400,100);
-    /*
-    if(verificador==0){
-        nombre=(manager->getActual()->GetNth(nodo)->value->movie_title);
-        l->setText(nombre.c_str());
-        l->setParent(wdg);
-        l->setGeometry(0,0,400,100);
-        //verificador++;
-
-        //wdg->setAttribute(Qt::WA_DeleteOnClose);
-
-    }
-    */
-
-    /*
-    else{
-        delete l;
-
-        nombre=(manager->getActual()->GetNth(nodo)->value->movie_title);
-        QLabel *n = new QLabel();
-        /*
-        qDeleteAll(ui->renamebox->findChildren<l *>());
-        qDeleteAll(ui->renamebox->findChildren<QTextEdit *>());
-
-        n->setText(nombre.c_str());
-        n->setParent(wdg);
-        n->setGeometry(0,0,400,100);
-        verificador++;
-    }
-    */
-
-
     wdg->show();
 
 }
