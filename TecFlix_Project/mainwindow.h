@@ -49,7 +49,6 @@ private:
     QWidget *ventanaP;
     QPushButton * m_pButton;
     QTabWidget* m_pTableWidget;
-    QWidget *wdg = new QWidget;
 
 
 };

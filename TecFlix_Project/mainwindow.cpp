@@ -92,7 +92,9 @@ void MainWindow::Linkear(string url){
 }
 
 void MainWindow::ventana_datos(int nodo){
-    QLabel* l = new QLabel;
+    QLabel* l = new QLabel();
+    QWidget *wdg = new QWidget;
+
     string nombre;
     int verificador = 0;
     wdg->setGeometry(100,0,800,500);
@@ -117,11 +119,17 @@ void MainWindow::ventana_datos(int nodo){
 
     }
     else{
+        delete l;
+
         nombre=(manager->getActual()->GetNth(nodo)->value->movie_title);
-        l->clear();
-        l->setText(nombre.c_str());
-        l->setParent(wdg);
-        l->setGeometry(0,0,400,100);
+        QLabel *n = new QLabel();
+        /*
+        qDeleteAll(ui->renamebox->findChildren<l *>());
+        qDeleteAll(ui->renamebox->findChildren<QTextEdit *>());
+        */
+        n->setText(nombre.c_str());
+        n->setParent(wdg);
+        n->setGeometry(0,0,400,100);
         verificador++;
     }
 
