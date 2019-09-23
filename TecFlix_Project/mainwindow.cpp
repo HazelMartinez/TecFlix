@@ -93,12 +93,18 @@ void MainWindow::Linkear(string url){
 
 void MainWindow::ventana_datos(int nodo){
     QLabel* l = new QLabel();
+    QLabel* director = new QLabel();
+    QLabel* duracion = new QLabel();
+    QLabel* label_diractor = new QLabel();
+    QLabel* label_duracion = new QLabel();
     QWidget *wdg = new QWidget;
+    QFont serifFont("Times", 30, QFont::Bold);
+    QFont sansFont("Decorative", 24);
 
-    string nombre;
-    int verificador = 0;
+    string nombre,name_director,duracion_text;
+
     wdg->setGeometry(100,0,800,500);
-    wdg->setStyleSheet("background-color:: #738FA7");
+    //wdg->setStyleSheet("background-color:: #738FA7");
     QPalette Pal(palette());
     // Asignar el color de fondo como Negro
     //Pal.setColor(QPalette::Background, Qt::black);
@@ -107,40 +113,35 @@ void MainWindow::ventana_datos(int nodo){
     Pal.setColor (QPalette::Background, color);
     wdg->setAutoFillBackground(true);
     wdg->setPalette(Pal);
-    //if(wdg->isVisible()){
+
     nombre=(manager->getActual()->GetNth(nodo)->value->movie_title);
+    name_director = (manager->getActual()->GetNth(nodo)->value->directorName);
+    duracion_text = (manager->getActual()->GetNth(nodo)->value->duration);
+
     l->setText(nombre.c_str());
+    l->setFont(serifFont);
     l->setParent(wdg);
-    l->setGeometry(0,0,400,100);
-    /*
-    if(verificador==0){
-        nombre=(manager->getActual()->GetNth(nodo)->value->movie_title);
-        l->setText(nombre.c_str());
-        l->setParent(wdg);
-        l->setGeometry(0,0,400,100);
-        //verificador++;
+    l->setGeometry(0,0,800,100);
 
-        //wdg->setAttribute(Qt::WA_DeleteOnClose);
+    director->setText(name_director.c_str());
+    director->setFont(sansFont);
+    director->setParent(wdg);
+    director->setGeometry(150,50,800,100);
 
-    }
-    */
+    label_diractor->setText("Director: ");
+    label_diractor->setFont(sansFont);
+    label_diractor->setParent(wdg);
+    label_diractor->setGeometry(0,50,800,100);
 
-    /*
-    else{
-        delete l;
+    label_duracion->setText(duracion_text.c_str());
+    label_duracion->setFont(sansFont);
+    label_duracion->setParent(wdg);
+    label_duracion->setGeometry(150,80,800,100);
 
-        nombre=(manager->getActual()->GetNth(nodo)->value->movie_title);
-        QLabel *n = new QLabel();
-        /*
-        qDeleteAll(ui->renamebox->findChildren<l *>());
-        qDeleteAll(ui->renamebox->findChildren<QTextEdit *>());
-
-        n->setText(nombre.c_str());
-        n->setParent(wdg);
-        n->setGeometry(0,0,400,100);
-        verificador++;
-    }
-    */
+    duracion->setText("Duración: ");
+    duracion->setFont(sansFont);
+    duracion->setParent(wdg);
+    duracion->setGeometry(0,80,800,100);
 
 
     wdg->show();
