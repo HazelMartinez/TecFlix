@@ -63,6 +63,16 @@ void Lectura::lectura(){
                 const char * url = token.c_str();
                 //system(url);
             }
+            if(indice == 19){
+                pelicula->language = token;
+            }
+            if(indice == 20){
+                pelicula->country = token;
+            }
+            if(indice == 25){
+                pelicula->imdb_score = token;
+            }
+
             indice++;
         }
         lista_peliculas->append(pelicula);

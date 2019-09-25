@@ -41,14 +41,20 @@ private slots:
 
 
 
+    void on_zoom_in_clicked();
+
 private:
     int contInferior=1;
     int contSuperior=cantidadPeliculas+contInferior;
+    int buttonwidth=115;
+    int buttonheight=200;
     string video;
     Ui::MainWindow *ui;
     QWidget *ventanaP;
     QPushButton * m_pButton;
     QTabWidget* m_pTableWidget;
+    QWidget* movie_central;
+
 
 
 };

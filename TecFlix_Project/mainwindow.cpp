@@ -97,13 +97,23 @@ void MainWindow::ventana_datos(int nodo){
     QLabel* duracion = new QLabel();
     QLabel* label_diractor = new QLabel();
     QLabel* label_duracion = new QLabel();
+    QLabel* imdb = new QLabel();
+    QLabel* imdb_label = new QLabel();
+    QLabel* pais = new QLabel();
+    QLabel* pais_label = new QLabel();
+    QLabel* idioma_label = new QLabel();
+    QLabel* idioma = new QLabel();
+    QLabel* marca = new QLabel();
+    QLabel* marca_label = new QLabel();
+
+
     QWidget *wdg = new QWidget;
     QFont serifFont("Times", 30, QFont::Bold);
     QFont sansFont("Decorative", 24);
 
-    string nombre,name_director,duracion_text;
+    string nombre,name_director,duracion_text,imdb_score,country,language;
 
-    wdg->setGeometry(100,0,800,500);
+    wdg->setGeometry(100,100,800,800);
     //wdg->setStyleSheet("background-color:: #738FA7");
     QPalette Pal(palette());
     // Asignar el color de fondo como Negro
@@ -114,40 +124,79 @@ void MainWindow::ventana_datos(int nodo){
     wdg->setAutoFillBackground(true);
     wdg->setPalette(Pal);
 
-    nombre=(manager->getActual()->GetNth(nodo)->value->movie_title);
+    nombre=         (manager->getActual()->GetNth(nodo)->value->movie_title);
     name_director = (manager->getActual()->GetNth(nodo)->value->directorName);
     duracion_text = (manager->getActual()->GetNth(nodo)->value->duration);
+    imdb_score =    (manager->getActual()->GetNth(nodo)->value->imdb_score);
+    country =       (manager->getActual()->GetNth(nodo)->value->country);
+    language =      (manager->getActual()->GetNth(nodo)->value->language);
 
     l->setText(nombre.c_str());
     l->setFont(serifFont);
     l->setParent(wdg);
     l->setGeometry(0,0,800,100);
 
-    director->setText(name_director.c_str());
-    director->setFont(sansFont);
-    director->setParent(wdg);
-    director->setGeometry(150,50,800,100);
+    marca->setText("*************************************************");
+    marca->setGeometry(0,30,800,100);
+    marca->setFont(serifFont);
+    marca->setParent(wdg);
 
     label_diractor->setText("Director: ");
     label_diractor->setFont(sansFont);
     label_diractor->setParent(wdg);
     label_diractor->setGeometry(0,50,800,100);
 
-    label_duracion->setText(duracion_text.c_str());
-    label_duracion->setFont(sansFont);
-    label_duracion->setParent(wdg);
-    label_duracion->setGeometry(150,80,800,100);
+    director->setText(name_director.c_str());
+    director->setFont(sansFont);
+    director->setParent(wdg);
+    director->setGeometry(150,50,800,100);
 
     duracion->setText("Duración: ");
     duracion->setFont(sansFont);
     duracion->setParent(wdg);
-    duracion->setGeometry(0,80,800,100);
+    duracion->setGeometry(0,100,800,100);
 
+    label_duracion->setText(duracion_text.c_str());
+    label_duracion->setFont(sansFont);
+    label_duracion->setParent(wdg);
+    label_duracion->setGeometry(150,100,800,100);
+
+    imdb->setText("IMDB Score: ");
+    imdb->setFont(sansFont);
+    imdb->setParent(wdg);
+    imdb->setGeometry(0,150,800,100);
+
+    imdb_label->setText(imdb_score.c_str());
+    imdb_label->setFont(sansFont);
+    imdb_label->setParent(wdg);
+    imdb_label->setGeometry(80,150,800,100);
+
+    pais->setText("País: ");
+    pais->setFont(sansFont);
+    pais->setParent(wdg);
+    pais->setGeometry(0,200,800,100);
+
+    pais_label->setText(country.c_str());
+    pais_label->setFont(sansFont);
+    pais_label->setParent(wdg);
+    pais_label->setGeometry(80,200,800,100);
+
+    idioma->setText("Idioma: ");
+    idioma->setFont(sansFont);
+    idioma->setParent(wdg);
+    idioma->setGeometry(0,250,800,100);
+
+    idioma_label->setText(language.c_str());
+    idioma_label->setFont(sansFont);
+    idioma_label->setParent(wdg);
+    idioma_label->setGeometry(80,250,800,100);
 
     wdg->show();
 
 }
+
 void MainWindow::createButtons(){
+    //this->movie_central->setGeometry(10,10,951,681);
     int x = 8;
     int y = 10;
     int buttonwidth=115;
@@ -159,7 +208,86 @@ void MainWindow::createButtons(){
 
     for(int i = 0; i<3 ;i++){
         for(int j = 0; j<8;j++){
-            QPushButton *a = new QPushButton(ui->centralWidget);
+            QPushButton *a = new QPushButton(ui->frame_movie);
+            a->setGeometry(x, y,buttonwidth,buttonheight);
+            x=x+buttonwidth + 5;
+
+            if(tamanioListaPeli > contador){
+                nombre=(manager->getActual()->GetNth(contador)->value->movie_title);
+                string movie_link = (manager->getActual()->GetNth(contador)->value->movie_imdb_link).c_str();
+                nombre=Cambiar(nombre);
+                a->setText(nombre.c_str());
+                connect(a, &QPushButton::clicked, [=]() { //paso por valor =
+                    //QPushButton emite una señal si un evento ocurre. Para manejar el botón conecte la señal apropiada a el slot:
+                      Linkear(movie_link);
+                      ventana_datos(contador);
+
+
+                    //Linkear(MainWindow);
+
+                  });
+                /*
+
+                connect(a, &QPushButton::clicked, [=](){
+                    ventana_datos();
+
+                });
+
+            */
+                 contador++;
+            }
+
+            a->show();
+        }
+        x=8;
+        y=y+buttonheight + 7;
+        //x reset
+        //ui->gridMovies->addWidget(a);
+    }
+}
+
+string MainWindow::Cambiar(string cadena){
+    std::string x = " ", y = "\n";
+
+    size_t pos;
+    while ((pos = cadena.find(x)) != std::string::npos) {
+        cadena.replace(pos, 1, y);
+    }
+
+
+
+    return cadena;
+}
+
+
+
+
+
+void MainWindow::on_zoom_in_clicked()
+
+{
+    ui->movie_area->hide();
+    QWidget* window = new QWidget(ui->centralWidget);
+
+    window->resize(951, 681);
+    window->show();
+    int plus_width = 2;
+    int plus_height = 2;
+
+    int x = 8;
+    int y = 10;
+    this->buttonwidth = this->buttonwidth+plus_width;
+    this->buttonheight = this->buttonheight+plus_height;
+    //int buttonwidth=115 + plus_width;
+    //int buttonheight=200 + plus_height;
+    int tamanioListaPeli = manager->getActual()->length; //manager tiene las listas
+    int contador = 0;
+    string url1="\n sdf",nombre;
+
+
+    for(int i = 0; i<3 ;i++){
+        for(int j = 0; j<8;j++){
+            QPushButton *a = new QPushButton(window);
             a->setGeometry(x, y,buttonwidth,buttonheight);
             x=x+buttonwidth + 5;
 
@@ -196,19 +324,5 @@ void MainWindow::createButtons(){
         //ui->gridMovies->addWidget(a);
     }
 }
-string MainWindow::Cambiar(string cadena){
-    std::string x = " ", y = "\n";
-
-    size_t pos;
-    while ((pos = cadena.find(x)) != std::string::npos) {
-        cadena.replace(pos, 1, y);
-    }
-
-
-
-    return cadena;
-}
-
-
 
 

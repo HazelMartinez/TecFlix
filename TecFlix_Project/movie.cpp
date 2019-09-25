@@ -63,5 +63,6 @@ void movie::imprimir(){
     cout<<this->duration<<endl;
     cout<<this->movie_title<<endl;
     cout<<this->movie_imdb_link<<endl;
+    cout<<this->imdb_score<<endl;
 }
 
