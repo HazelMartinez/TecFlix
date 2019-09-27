@@ -59,6 +59,17 @@ LinkedMovie* ManejoDeMemoria::CargarPagina(){
                 const char * url = token.c_str();
                 //system(url);
             }
+            if(indice == 19){
+                pelicula->language = token;
+            }
+
+            if(indice == 20){
+                pelicula->country = token;
+            }
+
+            if(indice == 25){
+                pelicula->imdb_score = token;
+            }
             indice++;
         }
         lista_peliculas->append(pelicula);
@@ -101,7 +112,18 @@ void ManejoDeMemoria::CargarInicial(int cantidadPeliculas){
     this->next=CargarPagina();
     this->mayor=mayor1;
     this->menor=menor1;
-    this->previa=NULL;
+    if (this->menor<=1){ // en caso de que sea solo el inicio
+        this->previa=NULL;
+
+    }
+    else{
+        this->mayor=this->menor;
+        this->menor=this->menor-cantidadPeliculas;
+        this->previa=CargarPagina();
+    }
+    this->mayor=mayor1;
+    this->menor=menor1;
+
     //this->actual->display();
 
 }
@@ -157,4 +179,10 @@ string ManejoDeMemoria::mostrar_datos(LinkedMovie* controlador_actual){
             contador = 0;
         }
     }
+}
+void ManejoDeMemoria::establecerContadores(int numeroBoton, int catidadPelicula)
+{
+    this->menor=1+(numeroBoton-1)*catidadPelicula; // hace el corrimiento segun el corrimiento del valor del boton
+    this->mayor=this->menor+catidadPelicula;// suma la cantidad de peliculas
+    CargarInicial(catidadPelicula);// carga las nuevas paginas del boton correspondiente
 }

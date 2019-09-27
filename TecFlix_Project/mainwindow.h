@@ -23,10 +23,13 @@ public:
     int cantidadPeliculas =24; //el tamanio de pagina es fijo, pero se puede cambiar antes de la ejecucion
     void Linkear(string url);
     string Cambiar(string cadena);
+    static QWidget* movie_central;
+
 private slots:
     //int contInferior=0;
     //int contSuperior=9;
     void prueba(int a);
+
     void on_downButton_clicked();
 
     void on_upButton_clicked();
@@ -37,11 +40,26 @@ private slots:
 
     void ventana_datos(int contador);
 
-
-
-
-
     void on_zoom_in_clicked();
+
+    void on_zoom_out_clicked();
+
+    void on_page1_clicked();
+
+    void on_page2_clicked();
+
+    void on_page3_clicked();
+
+    void on_page4_clicked();
+
+    void on_page5_clicked();
+
+    void on_page6_clicked();
+
+
+    void on_paginaatras_clicked();
+
+    void on_paginaadelante_clicked();
 
 private:
     int contInferior=1;
@@ -53,9 +71,6 @@ private:
     QWidget *ventanaP;
     QPushButton * m_pButton;
     QTabWidget* m_pTableWidget;
-    QWidget* movie_central;
-
-
 
 };
 

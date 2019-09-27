@@ -978,20 +978,108 @@
       <height>681</height>
      </rect>
     </property>
-    <widget class="QFrame" name="frame_movie">
+    <widget class="QPushButton" name="page1">
      <property name="geometry">
       <rect>
-       <x>0</x>
-       <y>0</y>
-       <width>951</width>
-       <height>681</height>
+       <x>340</x>
+       <y>650</y>
+       <width>31</width>
+       <height>25</height>
       </rect>
      </property>
-     <property name="frameShape">
-      <enum>QFrame::StyledPanel</enum>
+     <property name="text">
+      <string>1</string>
      </property>
-     <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
+    </widget>
+    <widget class="QPushButton" name="page2">
+     <property name="geometry">
+      <rect>
+       <x>380</x>
+       <y>650</y>
+       <width>31</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>2</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="page3">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>650</y>
+       <width>31</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>3</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="page4">
+     <property name="geometry">
+      <rect>
+       <x>460</x>
+       <y>650</y>
+       <width>31</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>4</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="page5">
+     <property name="geometry">
+      <rect>
+       <x>500</x>
+       <y>650</y>
+       <width>31</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>5</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="page6">
+     <property name="geometry">
+      <rect>
+       <x>540</x>
+       <y>650</y>
+       <width>31</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>6</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="paginaadelante">
+     <property name="geometry">
+      <rect>
+       <x>590</x>
+       <y>650</y>
+       <width>31</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&gt;&gt;</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="paginaatras">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>650</y>
+       <width>31</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;&lt;</string>
      </property>
     </widget>
    </widget>

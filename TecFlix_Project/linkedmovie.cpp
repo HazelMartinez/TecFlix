@@ -33,6 +33,8 @@ void LinkedMovie::display () {
         std::cout<<display_node->value->movie_imdb_link<<"\n";
         std::cout<<display_node->value->movie_title<<"\n";
         std::cout<<display_node->value->imdb_score<<"\n";
+        std::cout<<display_node->value->language<<"\n";
+        std::cout<<display_node->value->country<<"\n";
         std::cout<<"---------------------------------------------"<<"\n";
         display_node=display_node->next;
     }

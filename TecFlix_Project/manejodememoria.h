@@ -12,6 +12,7 @@ public:
     void CargarAdelante();
     void setmayor(int mayor);
     void setmenor (int menor);
+    void establecerContadores(int numeroBoton, int catidadPelicula);
     int getmayor();
     int getmenor();
     void CargarInicial(int cantidadPeliculas);
