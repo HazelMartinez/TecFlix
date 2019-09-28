@@ -1,12 +1,11 @@
 #include "movie.h"
-
 #include <iostream>
 #include <cstdlib>
 using namespace std;
 
+
 movie::movie()
 {
-
     this->directorName = ""; //mostrar 1
     this->num_critic_for_reviews = "";
     this->duration = ""; //mostrar 3
@@ -38,26 +37,9 @@ movie::movie()
 
 }
 
-void movie::muestra_nombre_pelicula_clik(){
-
-}
-
-void movie::muestra_nombre_autor_clik(){
-
-}
-
-void movie::muestra_nombre_duracion_clik(){
-
-}
-
-void movie::muestra_nombre_linkVideo_clik(){
-
-}
-
-void movie::obtener_link_video(){
-
-}
-
+///
+/// \brief movie:: este es un metodo para imprimir el contenido de la pelicula
+///
 void movie::imprimir(){
     cout<<this->directorName<<endl;
     cout<<this->duration<<endl;

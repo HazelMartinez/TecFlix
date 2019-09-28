@@ -36,12 +36,6 @@ public:
     std::string movie_facebook_likes;
     std::string completeLine;
 
-
-    void obtener_link_video();
-    void muestra_nombre_pelicula_clik();
-    void muestra_nombre_autor_clik();
-    void muestra_nombre_linkVideo_clik();
-    void muestra_nombre_duracion_clik();
     void imprimir();
     movie();
 
