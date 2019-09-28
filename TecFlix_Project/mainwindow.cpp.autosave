@@ -27,17 +27,17 @@ MainWindow::MainWindow(QWidget *parent) :
 {
 
     ui->setupUi(this);
-    // seteo los valores iniciales
-    manager->setmayor(this->contSuperior); //establece el indice inferior
-    manager->setmenor(this->contInferior);// establece el indice mayor
-    manager->CargarInicial(cantidadPeliculas);// hace la carga inicial
+    /// seteo los valores iniciales
+    manager->setmayor(this->contSuperior); ///&lt; establece el indice inferior
+    manager->setmenor(this->contInferior);///&lt;establece el indice mayor
+    manager->CargarInicial(cantidadPeliculas);///&lt;hace la carga inicial
 
     //manager->getActual()->display();
     //std::cout<<"*************************************************************"<<"\n";
     //manager->getNext()->display();
     //Aqui iria  la llamada al metodo de poner los datos en pantalla, el cual recibe una linkemovie que es manager.getActual
 
-    createButtons();
+    createButtons();///&lt;se llama el metodo de crear botones al correr la aplicacion 
     //manager->mostrar_datos(manager->getActual());
 }
 
@@ -50,12 +50,11 @@ MainWindow::~MainWindow()
 void MainWindow::on_downButton_clicked()
 {
 
-    //manager->getActual()->display();
     std::cout<<"*****************Prueba en down Button********************"<<"\n";
     //if ((manager->getmayor()+cantidadPeliculas)<5044){ // verifica si no es el final
-    manager->setmenor(manager->getmayor()); // setea los nuevos valores de los indices el menor ahora es el mayor
-    manager->setmayor(manager->getmayor()+cantidadPeliculas); // el mayor es lo que tenia el mayor + la cantidad de peliculas a mostrar
-    manager->CargarAdelante(); // carga las de adelante
+    manager->setmenor(manager->getmayor()); ///&lt; setea los nuevos valores de los indices el menor ahora es el mayor
+    manager->setmayor(manager->getmayor()+cantidadPeliculas); ///&lt; el mayor es lo que tenia el mayor + la cantidad de peliculas a mostrar
+    manager->CargarAdelante(); ///&lt; carga las de adelante
     //manager->getActual()->display();
     createButtons();
     std::cout<<"Entrando a cargar adelante*****************************"<<"\n";

@@ -66,7 +66,7 @@ void Lectura::lectura(){
 
             if(indice == 19){
                 pelicula->language = token;
-                cout << token << std::endl;
+                //cout << token << std::endl;
             }
 
             if(indice == 20){

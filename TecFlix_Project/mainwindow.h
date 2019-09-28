@@ -61,6 +61,8 @@ private slots:
 
     void on_paginaadelante_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     int contInferior=1;
     int contSuperior=cantidadPeliculas+contInferior;
