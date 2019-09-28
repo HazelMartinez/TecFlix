@@ -13,7 +13,9 @@ Lectura::Lectura()
 
 }
 
-
+///
+/// \brief Lectura::lectura metodo de prueba para leer el archivo csv
+///
 void Lectura::lectura(){
     //ifstream ip("/home/hazel/Escritorio/Datos2_TecFlix/TecFlix/TecFlix_Project/movie_metadata.csv");
     ifstream archivocsv;

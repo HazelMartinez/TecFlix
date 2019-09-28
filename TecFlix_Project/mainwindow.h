@@ -26,15 +26,12 @@ public:
     static QWidget* movie_central;
 
 private slots:
-    //int contInferior=0;
-    //int contSuperior=9;
+
     void prueba(int a);
 
     void on_downButton_clicked();
 
     void on_upButton_clicked();
-
-    //void handleButton();
 
     void createButtons();
 

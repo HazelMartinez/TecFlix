@@ -317,23 +317,13 @@ void MainWindow::on_zoom_in_clicked(){
                 string movie_link = (manager->getActual()->GetNth(contador)->value->movie_imdb_link).c_str();
                 nombre=Cambiar(nombre);
                 a->setText(nombre.c_str());
-                connect(a, &QPushButton::clicked, [=]() { //paso por valor =
-                    //QPushButton emite una señal si un evento ocurre. Para manejar el botón conecte la señal apropiada a el slot:
+                connect(a, &QPushButton::clicked, [=]() { ///&lt;paso por valor =
+                    ///&lt; QPushButton emite una señal si un evento ocurre. Para manejar el botón conecte la señal apropiada a el slot:
                       Linkear(movie_link);
-                      ventana_datos(contador);
-
-
-                    //Linkear(MainWindow);
+                      ventana_datos(contador);///&lt; se abre la ventana al presionar el boton
 
                   });
-                /*
 
-                connect(a, &QPushButton::clicked, [=](){
-                    ventana_datos();
-
-                });
-
-*/
                  contador++;
             }
 
@@ -341,15 +331,13 @@ void MainWindow::on_zoom_in_clicked(){
         }
         x=8;
         y=y+buttonheight + 7;
-        //x reset
-        //ui->gridMovies->addWidget(a);
+
     }
 }
 
 ///
 /// \brief MainWindow::on_zoom_out_clicked metodo que permite realizar el zoom out
 ///
-
 void MainWindow::on_zoom_out_clicked()
 {
 
@@ -375,7 +363,7 @@ void MainWindow::on_zoom_out_clicked()
     int y = 10;
     this->buttonwidth = this->buttonwidth-minus_width;
     this->buttonheight = this->buttonheight-minus_height;
-    int tamanioListaPeli = manager->getActual()->length; //manager tiene las listas
+    int tamanioListaPeli = manager->getActual()->length; ///&lt;manager tiene las listas
     int contador = 0;
     string url1="\n sdf",nombre;
 
@@ -394,20 +382,9 @@ void MainWindow::on_zoom_out_clicked()
                 connect(a, &QPushButton::clicked, [=]() { ///&lt;paso por valor =
                     ///&lt;QPushButton emite una señal si un evento ocurre. Para manejar el botón conecte la señal apropiada a el slot:
                       Linkear(movie_link);
-                      ventana_datos(contador);
-
-
-                    //Linkear(MainWindow);
-
+                      ventana_datos(contador);///&lt; se abre la ventana al presionar el boton
                   });
-                /*
 
-                connect(a, &QPushButton::clicked, [=](){
-                    ventana_datos();
-
-                });
-
-*/
                  contador++;
             }
 
@@ -415,11 +392,13 @@ void MainWindow::on_zoom_out_clicked()
         }
         x=8;
         y=y+buttonheight + 7;
-        //x reset
-        //ui->gridMovies->addWidget(a);
+
     }
 }
 
+///
+/// \brief MainWindow::on_page1_clicked metodo si se presiona el primer boton carga las peliculas correspondientes
+///
 void MainWindow::on_page1_clicked()
 {
     manager->establecerContadores(ui->page1->text().toInt(),this->cantidadPeliculas);
@@ -427,30 +406,46 @@ void MainWindow::on_page1_clicked()
 
 }
 
+///
+/// \brief MainWindow::on_page2_clicked  metodo si se presiona el segundo boton carga las peliculas correspondientes
+///
 void MainWindow::on_page2_clicked()
 {
     manager->establecerContadores(ui->page2->text().toInt(),this->cantidadPeliculas);
     createButtons();
 }
 
+///
+/// \brief MainWindow::on_page3_clicked  metodo si se presiona el tercer boton carga las peliculas correspondientes
+///
 void MainWindow::on_page3_clicked()
 {
     manager->establecerContadores(ui->page3->text().toInt(),this->cantidadPeliculas);
     createButtons();
 }
 
+
+///
+/// \brief MainWindow::on_page4_clicked  metodo si se presiona el cuarto boton carga las peliculas correspondientes
+///
 void MainWindow::on_page4_clicked()
 {
     manager->establecerContadores(ui->page4->text().toInt(),this->cantidadPeliculas);
     createButtons();
 }
 
+///
+/// \brief MainWindow::on_page5_clicked  metodo si se presiona el quinto boton carga las peliculas correspondientes
+///
 void MainWindow::on_page5_clicked()
 {
     manager->establecerContadores(ui->page5->text().toInt(),this->cantidadPeliculas);
     createButtons();
 }
 
+///
+/// \brief MainWindow::on_page6_clicked  metodo si se presiona el sexto boton carga las peliculas correspondientes
+///
 void MainWindow::on_page6_clicked()
 {
     manager->establecerContadores(ui->page6->text().toInt(),this->cantidadPeliculas);
@@ -458,7 +453,9 @@ void MainWindow::on_page6_clicked()
 }
 
 
-
+///
+/// \brief MainWindow::on_paginaatras_clicked metodo para el boton de retoceder
+///
 void MainWindow::on_paginaatras_clicked()
 {
     if (ui->page1->text().toInt()!=1){ // pregunta si es el minimo
@@ -477,6 +474,9 @@ void MainWindow::on_paginaatras_clicked()
     }
 }
 
+///
+/// \brief MainWindow::on_paginaadelante_clicked metodo para el boton de avanzar
+///
 void MainWindow::on_paginaadelante_clicked()
 {
     if (ui->page6->text().toInt()<=5044){// pregunta si es el maximo
@@ -494,14 +494,19 @@ void MainWindow::on_paginaadelante_clicked()
         ui->page6->setText(to_string(i6).c_str());
     }
 }
-
+///
+/// \brief MainWindow::on_pushButton_clicked
+///metodo encargado de hacer el calculo de memoria
 void MainWindow::on_pushButton_clicked()
 {
 
-    //int nodemovietamano=sizeof(nodemovie),movieTamano=sizeof(movie),LinkedMovieTamano=sizeof(LinkedMovie),manejoMemoriaTamano=sizeof(manejoMemoriaTamano),
-     //       mainwindowTamano=sizeof(MainWindow);
-    //int total=
+    int nodemovietamano=sizeof(nodemovie),movieTamano=sizeof(movie),LinkedMovieTamano=sizeof(LinkedMovie),manejoMemoriaTamano=sizeof(manejoMemoriaTamano),
+            mainwindowTamano=sizeof(MainWindow);
+    int total=3*(LinkedMovieTamano+(manager->getActual()->length)*(nodemovietamano+movieTamano))+manejoMemoriaTamano+mainwindowTamano;
+    int total2=5044*(nodemovietamano+movieTamano)+LinkedMovieTamano;
 
+    cout<<"Con paginacion: "<<total<<endl;
+    cout<<"Sin paginacion: "<<total2<<endl;
 
     //long tamano= ;
   //  std::cout<<nodemovietamano<<"\n";

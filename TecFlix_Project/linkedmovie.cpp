@@ -1,6 +1,10 @@
 #include "linkedmovie.h"
 
-
+///
+/// \brief LinkedMovie::append metodo que permite agregar peliculas a la lista enlazada
+/// \param value representa el valor por agregar
+/// modificado de: http://www.cplusplus.com/articles/E3wTURfi/
+///
 void LinkedMovie::append(movie* value) {
 
     nodemovie *new_node = new nodemovie();
@@ -22,6 +26,11 @@ void LinkedMovie::append(movie* value) {
     this->length++;
 }
 
+
+///
+/// \brief LinkedMovie::display metodo que permite observar lo que contiene la lista de peliculas
+/// tomado de:   http://www.cplusplus.com/articles/E3wTURfi/
+///
 void LinkedMovie::display () {
 
     nodemovie *display_node=new nodemovie();
@@ -40,6 +49,11 @@ void LinkedMovie::display () {
     }
 }
 
+///
+/// \brief LinkedMovie::GetNth metodo que permite obtener un respectivo nodo de la lista
+/// \param n el indice del nodo por accesar
+/// \return un objeto tipo nodo de pelicula
+///
 nodemovie* LinkedMovie::GetNth(int n)
 {
     int contador = 0;
@@ -54,19 +68,4 @@ nodemovie* LinkedMovie::GetNth(int n)
     return display_node;
 }
 
-/*
-movie* LinkedMovie::get(int index) {
-    if(index == 0) {
-        // Get the first element
-        return head;
-    } else {
-        // Get the index'th element
-        nodemovie* curr = head;
-        for(int i = 0; i < index; ++i) {
-            curr = head->value;
-        }
-        return head->value;
-    }
-}
-*/
 
