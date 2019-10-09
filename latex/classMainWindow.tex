@@ -1,0 +1,99 @@
+\hypertarget{classMainWindow}{}\section{Main\+Window Class Reference}
+\label{classMainWindow}\index{Main\+Window@{Main\+Window}}
+
+
+Inheritance diagram for Main\+Window\+:
+% FIG 0
+
+
+Collaboration diagram for Main\+Window\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMainWindow_a8b244be8b7b7db1b08de2a2acb9409db}{Main\+Window} (Q\+Widget $\ast$parent=0)
+\item 
+void \hyperlink{classMainWindow_ae50b6ad489f04f87597e89951ebb32f5}{Linkear} (string url)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classMainWindow_ae50b6ad489f04f87597e89951ebb32f5}{Main\+Window\+::\+Linkear} funcion que nos permite observar el trailer de la pelicula. \end{DoxyCompactList}\item 
+string \hyperlink{classMainWindow_abc32b15541cc089bb38675046b2d6f36}{Cambiar} (string cadena)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classMainWindow_abc32b15541cc089bb38675046b2d6f36}{Main\+Window\+::\+Cambiar} es un metodo que se realizo por que los nombres de las peliculas no calzaban en los botones. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMainWindow_a23795fa875787a03133281ab53452de8}\label{classMainWindow_a23795fa875787a03133281ab53452de8}} 
+\hyperlink{classManejoDeMemoria}{Manejo\+De\+Memoria} $\ast$ {\bfseries manager} =new \hyperlink{classManejoDeMemoria}{Manejo\+De\+Memoria}()
+\item 
+\mbox{\Hypertarget{classMainWindow_ab4facbc90ab74f67d4d2a730bda56b07}\label{classMainWindow_ab4facbc90ab74f67d4d2a730bda56b07}} 
+int {\bfseries cantidad\+Peliculas} =24
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMainWindow_aeb6e8a0d7fe4332871217ebda0143faf}\label{classMainWindow_aeb6e8a0d7fe4332871217ebda0143faf}} 
+static Q\+Widget $\ast$ {\bfseries movie\+\_\+central}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMainWindow_a8b244be8b7b7db1b08de2a2acb9409db}\label{classMainWindow_a8b244be8b7b7db1b08de2a2acb9409db}} 
+\index{Main\+Window@{Main\+Window}!Main\+Window@{Main\+Window}}
+\index{Main\+Window@{Main\+Window}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{Main\+Window()}{MainWindow()}}
+{\footnotesize\ttfamily Main\+Window\+::\+Main\+Window (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+seteo los valores iniciales
+
+$<$ establece el indice inferior
+
+$<$establece el indice mayor
+
+$<$hace la carga inicial
+
+$<$se llama el metodo de crear botones al correr la aplicacion 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classMainWindow_abc32b15541cc089bb38675046b2d6f36}\label{classMainWindow_abc32b15541cc089bb38675046b2d6f36}} 
+\index{Main\+Window@{Main\+Window}!Cambiar@{Cambiar}}
+\index{Cambiar@{Cambiar}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{Cambiar()}{Cambiar()}}
+{\footnotesize\ttfamily string Main\+Window\+::\+Cambiar (\begin{DoxyParamCaption}\item[{string}]{cadena }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classMainWindow_abc32b15541cc089bb38675046b2d6f36}{Main\+Window\+::\+Cambiar} es un metodo que se realizo por que los nombres de las peliculas no calzaban en los botones. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cadena} & representa el nombre de la pelicula \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+una cadena modificada, en lugar de espacios enter. 
+\end{DoxyReturn}
+$<$mientras no sea el final de la cadena.
+
+$<$remplace la cadena por un enter. \mbox{\Hypertarget{classMainWindow_ae50b6ad489f04f87597e89951ebb32f5}\label{classMainWindow_ae50b6ad489f04f87597e89951ebb32f5}} 
+\index{Main\+Window@{Main\+Window}!Linkear@{Linkear}}
+\index{Linkear@{Linkear}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{Linkear()}{Linkear()}}
+{\footnotesize\ttfamily void Main\+Window\+::\+Linkear (\begin{DoxyParamCaption}\item[{string}]{url }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classMainWindow_ae50b6ad489f04f87597e89951ebb32f5}{Main\+Window\+::\+Linkear} funcion que nos permite observar el trailer de la pelicula. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & sera el url de cada pelicula para observar el trailer \\
+\hline
+\end{DoxyParams}
+$<$ forma de decir que se abra en un buscador en especifico
+
+$<$ se necesita convertir en un char pointer para convertir en una constante de strings
+
+$<$ se invoca del comando del shell 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Tec\+Flix\+\_\+\+Project/mainwindow.\+h\item 
+Tec\+Flix\+\_\+\+Project/mainwindow.\+cpp\end{DoxyCompactItemize}

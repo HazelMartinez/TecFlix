@@ -1,0 +1,24 @@
+\hypertarget{structgeneric__node}{}\section{generic\+\_\+node$<$ T $>$ Struct Template Reference}
+\label{structgeneric__node}\index{generic\+\_\+node$<$ T $>$@{generic\+\_\+node$<$ T $>$}}
+
+
+Collaboration diagram for generic\+\_\+node$<$ T $>$\+:
+% FIG 0
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structgeneric__node_a93e80a9f1c69d9248bc7336af461e2b3}\label{structgeneric__node_a93e80a9f1c69d9248bc7336af461e2b3}} 
+T {\bfseries data}
+\item 
+\mbox{\Hypertarget{structgeneric__node_a3739ec26ddd39df1ad3c1aee438b7a54}\label{structgeneric__node_a3739ec26ddd39df1ad3c1aee438b7a54}} 
+struct \hyperlink{structgeneric__node}{generic\+\_\+node} $\ast$ {\bfseries next}
+\item 
+\mbox{\Hypertarget{structgeneric__node_a21e68dcdd0f4e02803c27cb24141313e}\label{structgeneric__node_a21e68dcdd0f4e02803c27cb24141313e}} 
+struct \hyperlink{structgeneric__node}{generic\+\_\+node} $\ast$ {\bfseries prev}
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Tec\+Flix\+\_\+\+Project/generic\+\_\+node.\+h\item 
+Tec\+Flix\+\_\+\+Project/lista.\+h\end{DoxyCompactItemize}

@@ -16,7 +16,6 @@
 #include <QGroupBox>
 #include "mainwindow_atras.h"
 #include <QtGui>
-
 #include <QTextEdit>
 
 using namespace std;

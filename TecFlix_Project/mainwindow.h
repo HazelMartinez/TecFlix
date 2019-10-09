@@ -27,37 +27,86 @@ public:
 
 private slots:
 
+    /**
+     * @brief prueba
+     * @param a
+     */
     void prueba(int a);
 
+    /**
+     * @brief on_downButton_clicked
+     */
     void on_downButton_clicked();
 
+    /**
+     * @brief on_upButton_clicked
+     */
     void on_upButton_clicked();
 
+    /**
+     * @brief createButtons
+     */
     void createButtons();
 
+    /**
+     * @brief ventana_datos
+     * @param contador
+     */
     void ventana_datos(int contador);
 
+    /**
+     * @brief on_zoom_in_clicked
+     */
     void on_zoom_in_clicked();
 
+    /**
+     * @brief on_zoom_out_clicked
+     */
     void on_zoom_out_clicked();
 
+    /**
+     * @brief on_page1_clicked
+     */
     void on_page1_clicked();
 
+    /**
+     * @brief on_page2_clicked
+     */
     void on_page2_clicked();
 
+    /**
+     * @brief on_page3_clicked
+     */
     void on_page3_clicked();
 
+    /**
+     * @brief on_page4_clicked
+     */
     void on_page4_clicked();
 
+    /**
+     * @brief on_page5_clicked
+     */
     void on_page5_clicked();
 
+    /**
+     * @brief on_page6_clicked
+     */
     void on_page6_clicked();
 
-
+    /**
+     * @brief on_paginaatras_clicked
+     */
     void on_paginaatras_clicked();
 
+    /**
+     * @brief on_paginaadelante_clicked
+     */
     void on_paginaadelante_clicked();
 
+    /**
+     * @brief on_pushButton_clicked
+     */
     void on_pushButton_clicked();
 
 private:
